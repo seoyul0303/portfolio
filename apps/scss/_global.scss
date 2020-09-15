@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+html,
+body{
+    height:100%;
+}
+
+body{
+    background:url('../images/background.png') no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+header{
+    width:100%;
+    @include vw-convert-pc(height, 100);
+    background:#fff;
+    h1{
+        float:left;
+        font-family:$galada;
+        @include vw-convert-pc(padding, 0 50);
+        @include vw-font-size-pc(48);
+        @include vw-convert-pc(line-height, 100);
+    }
+}
+
+section{
+    position:relative;
+    @include vw-convert-pc(margin-top, 70);
+    @include vw-convert-pc(margin-bottom, 70);
+    .year{
+        position:absolute;
+        top:0;
+        left:0;
+        @include vw-convert-pc(width, 130);
+        height:100%;
+        text-align:center;
+    }
+    .number{
+        @include vw-font-size-pc(30);
+        color:#fff
+    }
+    .dot{
+        margin:0 auto;
+        @include vw-convert-pc(width, 15);
+        @include vw-convert-pc(height, 15);
+        @include vw-convert-pc(border-radius, 15);
+        @include vw-convert-pc(margin-top, 10);
+        background-color:#fff;
+    }
+    .line{
+        position: absolute;
+        @include vw-convert-pc(top, 0);
+        @include vw-convert-pc(left, 65);
+        @include vw-convert-pc(width, 1);
+        height:100%;
+        @include vw-convert-pc(padding-top, 57);
+        .inner{
+            width:100%;
+            height:100%;
+            background-color:#fff;
+        }
+    }
+    .project{
+        width:100%;
+        @include vw-convert-pc(padding-left, 130);
+        @include vw-convert-pc(padding-right, 50);
+        li{
+            background-color:rgba(255,255,255,0.3);
+            opacity:0.5;
+            transition:opacity 0.3s ease;
+            &:last-child{
+                .title{
+                    border-bottom:0;
+                }
+            }
+            &:first-child{
+                .title:before{
+                    display:none;
+                }
+            }
+            &.on{
+                opacity:1;
+            }
+        }
+        .title{
+            position:relative;
+            display:block;
+            @include vw-convert-pc(padding, 0 50);
+            border-bottom:1px solid #ccc;
+            @include vw-convert-pc(line-height,100);
+            background-color:#fff;
+            color:#333;
+            &:before{
+                position:absolute;
+                content:'';
+                display:block;
+                @include vw-convert-pc(width, 15);
+                @include vw-convert-pc(height, 15);
+                @include vw-convert-pc(border-radius, 15);
+                @include vw-convert-pc(left, -72);
+                @include vw-convert-pc(top, 42);
+                background:#fff;
+            }
+        }
+        .client{
+            float:left;
+            @include vw-font-size-pc(30);
+            font-weight:500;
+        }
+        .project_name{
+            float:left;
+            @include vw-convert-pc(padding-left, 55);
+            @include vw-font-size-pc(26);
+        }
+        .detail{
+            position:relative;
+            @include vw-convert-pc(padding, 40 50);
+            .link_thumb{
+                position:absolute;
+                display:block;
+                @include vw-convert-pc(top, 40);
+                @include vw-convert-pc(left, 50);
+                @include vw-convert-pc(width, 570);
+                @include vw-convert-pc(height, 325);
+                transition:background-size 0.5s ease;
+                background-size:100% 100%;
+                background-position:center center;
+                &:hover{
+                    background-size:105% 105%;
+                }                
+            }
+            
+            .info{
+                @include vw-font-size-pc(24);
+                @include vw-convert-pc(padding-left, 610);
+                @include vw-convert-pc(min-height, 325);
+            }
+        }
+    }
+}
+
+footer{
+    width:100%;
+    @include vw-convert-pc(height, 400);
+}
+
+
