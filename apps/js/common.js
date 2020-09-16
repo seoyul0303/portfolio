@@ -22,7 +22,7 @@ PORTFOLIO = (function($) {
                 var scrollTop = $(window).scrollTop();
                 var contentTop = $(this).offset().top; 
 
-                if( scrollTop > contentTop - (windowHeight*0.3) ){
+                if( scrollTop > contentTop - (windowHeight*0.5) ){
                     $(this).addClass('on');
                 }else{
                     $(this).removeClass('on');

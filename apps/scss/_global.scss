@@ -20,12 +20,20 @@ header{
     width:100%;
     @include vw-convert-pc(height, 100);
     background:#fff;
+    @media(max-width:$screen-sm){
+        @include vw-convert-mo(height, 50);
+    }
     h1{
         float:left;
         font-family:$galada;
         @include vw-convert-pc(padding, 0 50);
-        @include vw-font-size-pc(48);
         @include vw-convert-pc(line-height, 100);
+        @include vw-font-size-pc(48);
+        @media(max-width:$screen-sm){
+            @include vw-convert-mo(padding, 0 15);
+            @include vw-convert-mo(line-height, 50);
+            @include vw-font-size-mo(24);
+        }
     }
 }
 
@@ -73,7 +81,7 @@ section{
         li{
             background-color:rgba(255,255,255,0.3);
             opacity:0.5;
-            transition:opacity 0.3s ease;
+            transition:opacity 0.5s ease;
             &:last-child{
                 .title{
                     border-bottom:0;
@@ -133,6 +141,11 @@ section{
                 background-position:center center;
                 &:hover{
                     background-size:105% 105%;
+                }
+                @media(max-width:$screen-sm){
+                    position:static;
+                    width:100%;
+                    @include vw-convert-mo(height,176);
                 }                
             }
             
@@ -140,6 +153,14 @@ section{
                 @include vw-font-size-pc(24);
                 @include vw-convert-pc(padding-left, 610);
                 @include vw-convert-pc(min-height, 325);
+                a{
+                    color:DodgerBlue;
+                    text-decoration:underline;
+                }
+                @media(max-width:$screen-sm){
+                    padding-left:0;
+                    min-height:auto;
+                }
             }
         }
     }
