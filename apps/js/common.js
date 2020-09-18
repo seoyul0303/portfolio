@@ -15,6 +15,18 @@ PORTFOLIO = (function($) {
             }
         },
 
+        imgChange : function(selector){
+            $(selector).each(function(){
+                var desktopSrc = $(this).attr("data-desktop");
+                var mobileSrc = $(this).attr("data-mobile");
+                if (window.innerWidth <= 960) {
+                    $(this).attr("src", mobileSrc);
+                }else {
+                    $(this).attr("src", desktopSrc);
+                }
+            });
+        },
+
         listOpener : function(){
             var windowHeight= $(window).height();
 

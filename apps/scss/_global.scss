@@ -41,6 +41,10 @@ section{
     position:relative;
     @include vw-convert-pc(margin-top, 70);
     @include vw-convert-pc(margin-bottom, 70);
+    @media(max-width:$screen-sm){
+        @include vw-convert-mo(margin-top, 20);
+        @include vw-convert-mo(margin-bottom, 20);
+    }
     .year{
         position:absolute;
         top:0;
@@ -48,10 +52,16 @@ section{
         @include vw-convert-pc(width, 130);
         height:100%;
         text-align:center;
+        @media(max-width:$screen-sm){
+            @include vw-convert-mo(width, 50);
+        }
     }
     .number{
         @include vw-font-size-pc(30);
-        color:#fff
+        color:#fff;
+        @media(max-width:$screen-sm){
+            @include vw-font-size-mo(15);
+        }
     }
     .dot{
         margin:0 auto;
@@ -60,6 +70,12 @@ section{
         @include vw-convert-pc(border-radius, 15);
         @include vw-convert-pc(margin-top, 10);
         background-color:#fff;
+        @media(max-width:$screen-sm){
+            @include vw-convert-mo(width, 10);
+            @include vw-convert-mo(height, 10);
+            @include vw-convert-mo(border-radius, 10);
+            @include vw-convert-mo(margin-top, 5);
+        }
     }
     .line{
         position: absolute;
@@ -68,6 +84,11 @@ section{
         @include vw-convert-pc(width, 1);
         height:100%;
         @include vw-convert-pc(padding-top, 57);
+        @media(max-width:$screen-sm){
+            @include vw-convert-mo(left, 25);
+            @include vw-convert-mo(width, 1);
+            @include vw-convert-mo(padding-top, 30);
+        }
         .inner{
             width:100%;
             height:100%;
@@ -78,6 +99,10 @@ section{
         width:100%;
         @include vw-convert-pc(padding-left, 130);
         @include vw-convert-pc(padding-right, 50);
+        @media(max-width:$screen-sm){
+            @include vw-convert-mo(padding-left, 50);
+            @include vw-convert-mo(padding-right, 20);
+        }
         li{
             background-color:rgba(255,255,255,0.3);
             opacity:0.5;
@@ -104,6 +129,10 @@ section{
             @include vw-convert-pc(line-height,100);
             background-color:#fff;
             color:#333;
+            @media(max-width:$screen-sm){
+                @include vw-convert-mo(padding, 10 20);
+                line-height:1.4;
+            }
             &:before{
                 position:absolute;
                 content:'';
@@ -114,21 +143,42 @@ section{
                 @include vw-convert-pc(left, -72);
                 @include vw-convert-pc(top, 42);
                 background:#fff;
+                @media(max-width:$screen-sm){
+                    @include vw-convert-mo(width, 10);
+                    @include vw-convert-mo(height, 10);
+                    @include vw-convert-mo(border-radius, 10);
+                    @include vw-convert-mo(left, -30);
+                    top:50%;
+                    @include vw-convert-mo(margin-top, -5);
+                }
             }
         }
         .client{
             float:left;
             @include vw-font-size-pc(30);
             font-weight:500;
+            @media(max-width:$screen-sm){
+                display:block;
+                width:100%;
+                @include vw-font-size-mo(17);
+                @include vw-convert-mo(padding-bottom, 5);
+            }
         }
         .project_name{
             float:left;
             @include vw-convert-pc(padding-left, 55);
             @include vw-font-size-pc(26);
+            @media(max-width:$screen-sm){
+                padding-left:0;
+                @include vw-font-size-mo(13);
+            }
         }
         .detail{
             position:relative;
             @include vw-convert-pc(padding, 40 50);
+            @media(max-width:$screen-sm){
+                @include vw-convert-mo(padding, 20);
+            }
             .link_thumb{
                 position:absolute;
                 display:block;
@@ -145,7 +195,7 @@ section{
                 @media(max-width:$screen-sm){
                     position:static;
                     width:100%;
-                    @include vw-convert-mo(height,176);
+                    @include vw-convert-mo(height,151);
                 }                
             }
             
@@ -153,13 +203,15 @@ section{
                 @include vw-font-size-pc(24);
                 @include vw-convert-pc(padding-left, 610);
                 @include vw-convert-pc(min-height, 325);
+                @media(max-width:$screen-sm){
+                    @include vw-font-size-mo(12);
+                    @include vw-convert-mo(padding-top, 10);
+                    padding-left:0;
+                    min-height:auto;
+                }
                 a{
                     color:DodgerBlue;
                     text-decoration:underline;
-                }
-                @media(max-width:$screen-sm){
-                    padding-left:0;
-                    min-height:auto;
                 }
             }
         }
