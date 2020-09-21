@@ -19,10 +19,10 @@ PORTFOLIO = (function($) {
             $(selector).each(function(){
                 var desktopSrc = $(this).attr("data-desktop");
                 var mobileSrc = $(this).attr("data-mobile");
-                if (window.innerWidth <= 960) {
-                    $(this).attr("src", mobileSrc);
+                if (window.innerWidth <= 768) {
+                    $(this).attr("style", "background-image:url("+mobileSrc+")");
                 }else {
-                    $(this).attr("src", desktopSrc);
+                    $(this).attr("style", "background-image:url("+desktopSrc+")");
                 }
             });
         },
@@ -53,6 +53,7 @@ PORTFOLIO = (function($) {
             var me = this;
             $(window).resize(function(){
                 common.mobileConfirm();
+                common.imgChange('.detail a');
             });
         },
 
@@ -60,6 +61,8 @@ PORTFOLIO = (function($) {
             common.mobileConfirm();
             common.scroll();
             common.listOpener();
+            common.imgChange('.detail a');
+            common.resize();
         }
     };
 

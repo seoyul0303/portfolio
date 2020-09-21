@@ -189,13 +189,14 @@ section{
                 transition:background-size 0.5s ease;
                 background-size:100% 100%;
                 background-position:center center;
+                background-color:#fff;
                 &:hover{
                     background-size:105% 105%;
                 }
                 @media(max-width:$screen-sm){
                     position:static;
                     width:100%;
-                    @include vw-convert-mo(height,151);
+                    @include vw-convert-mo(height,473);
                 }                
             }
             
