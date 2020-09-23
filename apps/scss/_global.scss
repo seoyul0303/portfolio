@@ -199,10 +199,10 @@ section{
                     @include vw-convert-mo(height,473);
                 }                
             }
-            
             .info{
                 @include vw-font-size-pc(24);
                 @include vw-convert-pc(padding-left, 610);
+                @include vw-convert-pc(padding-bottom, 64);
                 @include vw-convert-pc(min-height, 325);
                 @media(max-width:$screen-sm){
                     @include vw-font-size-mo(12);
@@ -213,6 +213,19 @@ section{
                 a{
                     color:DodgerBlue;
                     text-decoration:underline;
+                }
+            }
+            .tech{
+                position:absolute;
+                @include vw-convert-pc(bottom, 40);
+                @include vw-convert-pc(right, 50);
+                i{
+                    float:left;
+                    @include vw-font-size-pc(64);
+                    @include vw-convert-pc(padding-right, 15);
+                    &:last-child{
+                       padding-right:0; 
+                    }
                 }
             }
         }
