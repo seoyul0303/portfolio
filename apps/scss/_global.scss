@@ -221,7 +221,7 @@ section{
                 @include vw-convert-pc(right, 50);
                 i{
                     float:left;
-                    @include vw-font-size-pc(64);
+                    @include vw-font-size-pc(52);
                     @include vw-convert-pc(padding-right, 15);
                     &:last-child{
                        padding-right:0; 
