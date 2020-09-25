@@ -35,6 +35,47 @@ header{
             @include vw-font-size-mo(24);
         }
     }
+    .menu{
+        float:left;
+        @include vw-convert-pc(margin-left, 50);
+        li{
+            float:left;
+            @include vw-convert-pc(height, 100);
+            @include vw-convert-pc(margin-right, 30);
+            @include vw-convert-pc(padding, 35 0);
+            text-transform: uppercase;
+            &:last-child{
+                margin-right:0;
+            }
+            &.active{
+                a{
+                    color:DodgerBlue;
+                }
+            }
+            a{
+                position:relative;
+                display:block;
+                @include vw-convert-pc(padding, 0 8);
+                @include vw-font-size-pc(24);
+                font-weight:500;
+                color:#333;
+                &:after{
+                    position:absolute;
+                    @include vw-convert-pc(bottom, -3);
+                    left:0;
+                    content:'';
+                    display:block;
+                    width:100%;
+                    @include vw-convert-pc(height, 3);
+                    background-color:DodgerBlue;
+                    opacity:0;
+                }
+                &:hover:after{
+                    opacity:1;
+                }
+            }
+        }
+    }
 }
 
 section{
@@ -105,7 +146,7 @@ section{
         }
         li{
             background-color:rgba(255,255,255,0.3);
-            opacity:0.5;
+            opacity:0.4;
             transition:opacity 0.5s ease;
             &:last-child{
                 .title{
