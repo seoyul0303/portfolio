@@ -53,7 +53,7 @@ PORTFOLIO = (function($) {
             var me = this;
             $(window).resize(function(){
                 common.mobileConfirm();
-                common.imgChange('.detail a');
+                common.imgChange('.detail .img');
             });
         },
 
@@ -61,7 +61,7 @@ PORTFOLIO = (function($) {
             common.mobileConfirm();
             common.scroll();
             common.listOpener();
-            common.imgChange('.detail a');
+            common.imgChange('.detail .img');
             common.resize();
         }
     };

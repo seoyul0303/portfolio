@@ -159,7 +159,7 @@ section{
             @include vw-convert-mo(padding-left, 50);
             @include vw-convert-mo(padding-right, 20);
         }
-        li{
+        > li{
             background-color:rgba(255,255,255,0.3);
             opacity:0.4;
             transition:opacity 0.5s ease;
@@ -232,42 +232,57 @@ section{
             }
         }
         .detail{
-            position:relative;
             @include vw-convert-pc(padding, 40 50);
             @media(max-width:$screen-sm){
                 @include vw-convert-mo(padding, 20);
             }
+            > .inner{
+                position:relative;
+            }
             .link_thumb{
-                position:absolute;
+                float:left;
                 display:block;
-                @include vw-convert-pc(top, 40);
-                @include vw-convert-pc(left, 50);
-                @include vw-convert-pc(width, 570);
-                @include vw-convert-pc(height, 325);
-                transition:background-size 0.5s ease;
+                width:67%;
                 background-size:100% 100%;
                 background-position:center center;
                 background-color:#fff;
-                &:hover{
-                    background-size:105% 105%;
+                .img{
+                    width:100%;
+                    height:0;
+                    padding-bottom:57%;
+                    background-size:100% 100%;
+                    background-position:center center;
+                    background-color:#fff;
+                    transition:background-size 0.5s ease;
+                    &:hover{
+                        background-size:105% 105%;
+                    }
                 }
                 @media(max-width:$screen-sm){
-                    position:static;
                     width:100%;
-                    @include vw-convert-mo(height,473);
+                    .img{
+                        padding-bottom:177%;
+                    }
                 }                
             }
             .info{
+                position:relative;
+                float:left;
+                width:33%;
+                height:100%;
                 @include vw-font-size-pc(24);
-                @include vw-convert-pc(padding-left, 610);
+                @include vw-convert-pc(padding-left, 30);
                 @include vw-convert-pc(padding-bottom, 64);
-                @include vw-convert-pc(min-height, 325);
+                li{
+                    line-height:1.6;
+                    @include vw-convert-pc(padding-bottom, 15);
+                }
                 @media(max-width:$screen-sm){
+                    width:100%;
                     @include vw-font-size-mo(12);
                     @include vw-convert-mo(padding-top, 10);
                     @include vw-convert-mo(padding-bottom, 5);
                     padding-left:0;
-                    min-height:auto;
                 }
                 a{
                     color:DodgerBlue;
@@ -276,8 +291,8 @@ section{
             }
             .tech{
                 position:absolute;
-                @include vw-convert-pc(bottom, 40);
-                @include vw-convert-pc(right, 50);
+                right:0;
+                bottom:0;
                 i{
                     float:left;
                     color:#444;
