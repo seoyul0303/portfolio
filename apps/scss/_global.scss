@@ -5,15 +5,16 @@
     display:block;
     clear:both;
 }
-html,
-body{
-    height:100%;
-}
 
 body{
     background:url('../images/background.png') no-repeat;
     background-size:cover;
     background-attachment:fixed;
+    position:relative;
+}
+
+#conatiner{
+    position:relative;
 }
 
 header{
@@ -97,6 +98,9 @@ section{
     position:relative;
     @include vw-convert-pc(margin-top, 70);
     @include vw-convert-pc(margin-bottom, 70);
+    &:last-child{
+        margin-bottom:0;
+    }
     @media(max-width:$screen-sm){
         @include vw-convert-mo(margin-top, 20);
         @include vw-convert-mo(margin-bottom, 20);
@@ -314,9 +318,23 @@ section{
     }
 }
 
+.top_btn{
+    position:fixed;
+    bottom:0;
+    @include vw-convert-pc(left, 45);
+    font-weight:bold;
+    line-height:1;
+    color:#fff;
+    @include vw-convert-pc(border-radius, 50);
+    @include vw-font-size-pc(40);
+}
+
 footer{
     width:100%;
-    @include vw-convert-pc(height, 400);
+    @include vw-convert-pc(padding, 100 0 130);
+    @include vw-font-size-pc(72);
+    font-family:$galada;
+    text-align:center;
 }
 
 

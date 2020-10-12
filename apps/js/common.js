@@ -69,6 +69,9 @@ PORTFOLIO = (function($) {
     //ready
     $(document).ready(function(){
         common.init();
+        $('.top_btn').topButton({
+			footerId : $('footer')
+		});
 
         //landscape check
         window.addEventListener("orientationchange", function() {
