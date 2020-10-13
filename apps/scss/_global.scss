@@ -39,55 +39,57 @@ header{
     .menu{
         float:left;
         @include vw-convert-pc(margin-left, 50);
+        @include vw-convert-pc(padding, 30 0);
         @media(max-width:$screen-sm){
             @include vw-convert-mo(margin-left, 25);
+            @include vw-convert-mo(padding, 15 0);
         }
         li{
             float:left;
-            @include vw-convert-pc(height, 100);
             @include vw-convert-pc(margin-right, 30);
-            @include vw-convert-pc(padding, 35 0);
             text-transform: uppercase;
+            color:#fff;
+            @include vw-convert-pc(width, 88);
+            @include vw-convert-pc(height, 40);
+            background-color:#ccc;
+            img{
+                width:100%;
+                position:relative;
+                z-index:2;
+            }
             @media(max-width:$screen-sm){
-                @include vw-convert-mo(height, 50);
                 @include vw-convert-mo(margin-right, 15);
-                @include vw-convert-mo(padding, 16 0);
+                @include vw-convert-mo(width, 44);
+                @include vw-convert-mo(height, 20);
             }
             &:last-child{
                 margin-right:0;
             }
             &.active{
                 a{
-                    color:DodgerBlue;
+                    background-color:#333;
                 }
             }
             a{
                 position:relative;
                 display:block;
-                @include vw-convert-pc(padding, 0 8);
-                @include vw-font-size-pc(24);
-                font-weight:500;
-                color:#333;
-                &:after{
-                    position:absolute;
-                    @include vw-convert-pc(bottom, -3);
-                    left:0;
-                    content:'';
+                width:100%;
+                height:100%;
+                .bg{
+                    transition:width 0.3s ease;
                     display:block;
-                    width:100%;
-                    @include vw-convert-pc(height, 3);
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:0;
+                    height:100%;
+                    z-index:1;
                     background-color:DodgerBlue;
-                    opacity:0;
                 }
-                &:hover:after{
-                    opacity:1;
-                }
-                @media(max-width:$screen-sm){
-                    @include vw-convert-mo(padding, 0 4);
-                    @include vw-font-size-mo(14);
-                    &:after{
-                        display:none;
-                    }
+            }
+            &:hover{
+                .bg{
+                    width:100%;
                 }
             }
         }
@@ -322,11 +324,17 @@ section{
     position:fixed;
     bottom:0;
     @include vw-convert-pc(left, 45);
-    font-weight:bold;
-    line-height:1;
-    color:#fff;
-    @include vw-convert-pc(border-radius, 50);
-    @include vw-font-size-pc(40);
+    @include vw-convert-pc(width,40);
+    @include vw-convert-pc(height,40);
+    background:url(../images/icon-topbtn.png) no-repeat center center;
+    background-size:cover;
+    border:0;
+    outline:none;
+    @media(max-width:$screen-sm){
+        @include vw-convert-mo(left, 15);
+        @include vw-convert-mo(width,20);
+        @include vw-convert-mo(height,20);
+    }
 }
 
 footer{
@@ -335,6 +343,10 @@ footer{
     @include vw-font-size-pc(72);
     font-family:$galada;
     text-align:center;
+    @media(max-width:$screen-sm){
+        @include vw-convert-mo(padding, 80 0);
+        @include vw-font-size-mo(30);
+    }
 }
 
 

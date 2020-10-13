@@ -94,6 +94,9 @@ PORTFOLIO = (function($) {
 
         $(window).resize(function(){
             orientation();
+            $('.top_btn').topButton({
+                footerId : $('footer')
+            });
         });
 
         function orientation(){
