@@ -7,10 +7,13 @@
 }
 
 body{
-    background:url('../images/background.png') no-repeat;
+    background:url('../images/background.png') no-repeat center center;
     background-size:cover;
     background-attachment:fixed;
     position:relative;
+    @media(max-width:$screen-sm){
+        
+    }
 }
 
 #conatiner{
@@ -90,6 +93,13 @@ header{
             &:hover{
                 .bg{
                     width:100%;
+                }
+            }
+            @media(max-width:$screen-sm){
+                &:hover{
+                    .bg{
+                        width:0;
+                    }
                 }
             }
         }
@@ -262,6 +272,11 @@ section{
                     transition:background-size 0.5s ease;
                     &:hover{
                         background-size:105% 105%;
+                    }
+                    @media(max-width:$screen-sm){
+                        &:hover{
+                            background-size:100% 100%;
+                        }
                     }
                 }
                 @media(max-width:$screen-sm){
